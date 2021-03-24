@@ -1,0 +1,57 @@
+apiVersion: machine.openshift.io/v1beta1
+kind: MachineSet
+metadata:
+  creationTimestamp: null
+  labels:
+    machine.openshift.io/cluster-api-cluster: hub-lwsfl 
+  name: hub-lwsfl-infra 
+  namespace: openshift-machine-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      machine.openshift.io/cluster-api-cluster: hub-lwsfl 
+      machine.openshift.io/cluster-api-machineset: hub-lwsfl-infra 
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        machine.openshift.io/cluster-api-cluster: hub-lwsfl 
+        machine.openshift.io/cluster-api-machine-role: worker 
+        machine.openshift.io/cluster-api-machine-type: worker
+        machine.openshift.io/cluster-api-machineset: hub-lwsfl-infra
+    spec:
+      taints:
+      - effect: NoSchedule
+        key: node.ocs.openshift.io/storage
+        value: "true"
+      metadata:
+        creationTimestamp: null
+        labels:
+          node-role.kubernetes.io/infra: ""
+          cluster.ocs.openshift.io/openshift-storage: ""
+      providerSpec:
+        value:
+          apiVersion: vsphereprovider.openshift.io/v1beta1
+          credentialsSecret:
+            name: vsphere-cloud-credentials
+          diskGiB: 120
+          kind: VSphereMachineProviderSpec
+          memoryMiB: 32768
+          metadata:
+            creationTimestamp: null
+          network:
+            devices:
+            - networkName: "VM Network - ds" 
+          numCPUs: 10
+          numCoresPerSocket: 1
+          snapshot: ""
+          template: hub-lwsfl-rhcos
+          userDataSecret:
+            name: worker-user-data
+          workspace:
+            datacenter: Datacenter
+            datastore: Synology_5tb
+            folder: /Datacenter/vm/hub-lwsfl
+            resourcepool: /Datacenter/host/Cluster/Resources
+            server: vcenter.lab 
