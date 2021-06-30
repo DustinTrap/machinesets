@@ -3,23 +3,23 @@ kind: MachineSet
 metadata:
   creationTimestamp: null
   labels:
-    machine.openshift.io/cluster-api-cluster: hub-lwsfl 
-  name: hub-lwsfl-infra 
+    machine.openshift.io/cluster-api-cluster: hub-vvnf4 
+  name: hub-vvnf4-infra 
   namespace: openshift-machine-api
 spec:
   replicas: 1
   selector:
     matchLabels:
-      machine.openshift.io/cluster-api-cluster: hub-lwsfl 
-      machine.openshift.io/cluster-api-machineset: hub-lwsfl-infra 
+      machine.openshift.io/cluster-api-cluster: hub-vvnf4 
+      machine.openshift.io/cluster-api-machineset: hub-vvnf4-infra 
   template:
     metadata:
       creationTimestamp: null
       labels:
-        machine.openshift.io/cluster-api-cluster: hub-lwsfl 
+        machine.openshift.io/cluster-api-cluster: hub-vvnf4 
         machine.openshift.io/cluster-api-machine-role: worker 
         machine.openshift.io/cluster-api-machine-type: worker
-        machine.openshift.io/cluster-api-machineset: hub-lwsfl-infra
+        machine.openshift.io/cluster-api-machineset: hub-vvnf4-infra
     spec:
       taints:
       - effect: NoSchedule
@@ -46,12 +46,12 @@ spec:
           numCPUs: 10
           numCoresPerSocket: 1
           snapshot: ""
-          template: hub-lwsfl-rhcos
+          template: hub-vvnf4-rhcos
           userDataSecret:
             name: worker-user-data
           workspace:
             datacenter: Datacenter
             datastore: Synology_5tb
-            folder: /Datacenter/vm/hub-lwsfl
+            folder: /Datacenter/vm/hub-vvnf4
             resourcepool: /Datacenter/host/Cluster/Resources
             server: vcenter.lab 
