@@ -46,7 +46,7 @@ spec:
           numCPUs: 10
           numCoresPerSocket: 1
           snapshot: ""
-          template: hub-vvnf4-rhcos
+          template: hub-fnnp4-rhcos
           userDataSecret:
             name: worker-user-data
           workspace:
