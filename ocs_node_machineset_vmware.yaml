@@ -3,23 +3,23 @@ kind: MachineSet
 metadata:
   creationTimestamp: null
   labels:
-    machine.openshift.io/cluster-api-cluster: hub-fnnp4 
-  name: hub-fnnp4-infra 
+    machine.openshift.io/cluster-api-cluster: hub-g54dt 
+  name: hub-g54dt-infra 
   namespace: openshift-machine-api
 spec:
   replicas: 3
   selector:
     matchLabels:
-      machine.openshift.io/cluster-api-cluster: hub-fnnp4 
-      machine.openshift.io/cluster-api-machineset: hub-fnnp4-infra 
+      machine.openshift.io/cluster-api-cluster: hub-g54dt 
+      machine.openshift.io/cluster-api-machineset: hub-g54dt-infra 
   template:
     metadata:
       creationTimestamp: null
       labels:
-        machine.openshift.io/cluster-api-cluster: hub-fnnp4 
+        machine.openshift.io/cluster-api-cluster: hub-g54dt 
         machine.openshift.io/cluster-api-machine-role: worker 
         machine.openshift.io/cluster-api-machine-type: worker
-        machine.openshift.io/cluster-api-machineset: hub-fnnp4-infra
+        machine.openshift.io/cluster-api-machineset: hub-g54dt-infra
     spec:
       taints:
       - effect: NoSchedule
@@ -46,12 +46,12 @@ spec:
           numCPUs: 10
           numCoresPerSocket: 1
           snapshot: ""
-          template: hub-fnnp4-rhcos
+          template: hub-g54dt-rhcos
           userDataSecret:
             name: worker-user-data
           workspace:
             datacenter: Datacenter
             datastore: vsanDatastore
-            folder: /Datacenter/vm/hub-fnnp4
+            folder: /Datacenter/vm/hub-g54dt
             resourcepool: /Datacenter/host/Cluster/Resources
             server: vcenter.lab 
