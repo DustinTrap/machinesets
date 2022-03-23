@@ -3,23 +3,23 @@ kind: MachineSet
 metadata:
   creationTimestamp: null
   labels:
-    machine.openshift.io/cluster-api-cluster: hub-g54dt 
-  name: hub-g54dt-infra 
+    machine.openshift.io/cluster-api-cluster: hub-rl8pq 
+  name: hub-rl8pq-infra 
   namespace: openshift-machine-api
 spec:
   replicas: 3
   selector:
     matchLabels:
-      machine.openshift.io/cluster-api-cluster: hub-g54dt 
-      machine.openshift.io/cluster-api-machineset: hub-g54dt-infra 
+      machine.openshift.io/cluster-api-cluster: hub-rl8pq 
+      machine.openshift.io/cluster-api-machineset: hub-rl8pq-infra 
   template:
     metadata:
       creationTimestamp: null
       labels:
-        machine.openshift.io/cluster-api-cluster: hub-g54dt 
+        machine.openshift.io/cluster-api-cluster: hub-rl8pq 
         machine.openshift.io/cluster-api-machine-role: worker 
         machine.openshift.io/cluster-api-machine-type: worker
-        machine.openshift.io/cluster-api-machineset: hub-g54dt-infra
+        machine.openshift.io/cluster-api-machineset: hub-rl8pq-infra
     spec:
       taints:
       - effect: NoSchedule
