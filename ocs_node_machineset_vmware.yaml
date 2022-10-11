@@ -42,7 +42,7 @@ spec:
             creationTimestamp: null
           network:
             devices:
-            - networkName: "VM Network - ds" 
+            - networkName: "VM Network" 
           numCPUs: 10
           numCoresPerSocket: 1
           snapshot: ""
@@ -51,7 +51,7 @@ spec:
             name: worker-user-data
           workspace:
             datacenter: Datacenter
-            datastore: vsanDatastore
+            datastore: 10tb
             folder: /Datacenter/vm/hub-svqlp
             resourcepool: /Datacenter/host/Cluster/Resources
-            server: vcenter.lab 
+            server: vsphere.lab 
