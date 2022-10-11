@@ -3,23 +3,23 @@ kind: MachineSet
 metadata:
   creationTimestamp: null
   labels:
-    machine.openshift.io/cluster-api-cluster: hub-rl8pq 
-  name: hub-rl8pq-infra 
+    machine.openshift.io/cluster-api-cluster: hub-svqlp 
+  name: hub-svqlp-infra 
   namespace: openshift-machine-api
 spec:
   replicas: 3
   selector:
     matchLabels:
-      machine.openshift.io/cluster-api-cluster: hub-rl8pq 
-      machine.openshift.io/cluster-api-machineset: hub-rl8pq-infra 
+      machine.openshift.io/cluster-api-cluster: hub-svqlp 
+      machine.openshift.io/cluster-api-machineset: hub-svqlp-infra 
   template:
     metadata:
       creationTimestamp: null
       labels:
-        machine.openshift.io/cluster-api-cluster: hub-rl8pq 
+        machine.openshift.io/cluster-api-cluster: hub-svqlp 
         machine.openshift.io/cluster-api-machine-role: worker 
         machine.openshift.io/cluster-api-machine-type: worker
-        machine.openshift.io/cluster-api-machineset: hub-rl8pq-infra
+        machine.openshift.io/cluster-api-machineset: hub-svqlp-infra
     spec:
       taints:
       - effect: NoSchedule
@@ -46,12 +46,12 @@ spec:
           numCPUs: 10
           numCoresPerSocket: 1
           snapshot: ""
-          template: hub-g54dt-rhcos
+          template: hub-svqlp-rhcos
           userDataSecret:
             name: worker-user-data
           workspace:
             datacenter: Datacenter
             datastore: vsanDatastore
-            folder: /Datacenter/vm/hub-g54dt
+            folder: /Datacenter/vm/hub-svqlp
             resourcepool: /Datacenter/host/Cluster/Resources
             server: vcenter.lab 
